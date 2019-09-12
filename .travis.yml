@@ -1,0 +1,12 @@
+language: go
+go:
+- 1.13
+os:
+- linux
+install:
+- export ETCD_VERSION="3.3.10"
+- wget -q -O /tmp/etcd.tar.gz "https://github.com/etcd-io/etcd/releases/download/v$ETCD_VERSION/etcd-v$ETCD_VERSION-linux-amd64.tar.gz"
+- tar xvzf /tmp/etcd.tar.gz -C /tmp
+- export PATH="$PATH:/tmp/etcd-v$ETCD_VERSION-linux-amd64"
+script:
+- go test .
