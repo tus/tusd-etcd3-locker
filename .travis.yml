@@ -4,9 +4,9 @@ go:
 os:
 - linux
 install:
-- export ETCD_VERSION="3.3.10"
-- wget -q -O /tmp/etcd.tar.gz "https://github.com/etcd-io/etcd/releases/download/v$ETCD_VERSION/etcd-v$ETCD_VERSION-linux-amd64.tar.gz"
+- export VERSION_ETCD="3.3.10"
+- wget -q -O /tmp/etcd.tar.gz "https://github.com/etcd-io/etcd/releases/download/v$VERSION_ETCD/etcd-v$VERSION_ETCD-linux-amd64.tar.gz"
 - tar xvzf /tmp/etcd.tar.gz -C /tmp
-- export PATH="$PATH:/tmp/etcd-v$ETCD_VERSION-linux-amd64"
+- export PATH="$PATH:/tmp/etcd-v$VERSION_ETCD-linux-amd64"
 script:
 - go test .
